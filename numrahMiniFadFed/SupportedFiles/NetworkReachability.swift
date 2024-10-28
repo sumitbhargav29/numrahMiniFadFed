@@ -1,10 +1,10 @@
 //
 //  NetworkReachability.swift
-//  Empeq
+//  numrahMiniFadFed
 //
-//  Created by Bharti Nagapure on 25/03/20.
-//  Copyright © 2020 Ranium. All rights reserved.
+//  Created by SamMac on 27/10/24.
 //
+
 
 import Foundation
 import SystemConfiguration

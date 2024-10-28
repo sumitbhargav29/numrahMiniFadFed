@@ -16,7 +16,8 @@ enum Color {
     case clrYellow
     case clrViewBg
     case clrViewOuterGender
-
+    case clrTabButton
+    
     
     case custom(hexString: String, alpha: Double)
     
@@ -46,6 +47,8 @@ extension Color {
         case .clrViewOuterGender:
             instanceColor = UIColor(named: "clrViewOuterGender") ?? UIColor.clear
             
+        case .clrTabButton:
+            instanceColor = UIColor(named: "clrTabButton") ?? UIColor.clear
             
             
             

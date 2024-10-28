@@ -1,9 +1,10 @@
 //
 //  AppExtension.swift
-//  MVVMSumit
+//  numrahMiniFadFed
 //
-//  Created by Sam-Ranium on 14/10/22.
+//  Created by SamMac on 27/10/24.
 //
+
 
 import Foundation
 import UIKit
@@ -11,10 +12,19 @@ import UIKit
 //MARK:- Global var declaration
 let dateFormatter = DateFormatter()
 let date = Date()
-let AppName = "Numrah MiniFadFed"
 
 
 extension UIViewController {
+    
+    //MARK: -  Get VC
+    public func getStoryboard(storyboardName: String) -> UIStoryboard {
+        return UIStoryboard(name: storyboardName, bundle: nil)
+    }
+
+    public func loadVC(strStoryboardId: String, strVCId: String) -> UIViewController {
+        let vc = getStoryboard(storyboardName: strStoryboardId).instantiateViewController(withIdentifier: strVCId)
+        return vc
+    }
     
     //MARK:- for Showing Alert
     func setPresentAlert(withTitle title: String, message : String) {

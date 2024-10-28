@@ -1,9 +1,10 @@
 //
 //  NetworkManager.swift
-//  MVVMSumit
+//  numrahMiniFadFed
 //
-//  Created by Sam-Ranium on 14/10/22.
+//  Created by SamMac on 27/10/24.
 //
+
 
 import Foundation
 import SwiftyJSON

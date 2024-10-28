@@ -1,10 +1,10 @@
 //
 //  AppURL.swift
-//  MVVMDemo
+//  numrahMiniFadFed
 //
-//  Created by Seifallah Selmi on 17/06/20.
-//  Copyright © 2020 Seifallah Selmi All rights reserved.
+//  Created by SamMac on 27/10/24.
 //
+
 
 import UIKit
 
