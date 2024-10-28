@@ -582,13 +582,84 @@
                                         <color key="textColor" red="0.56862745098039214" green="0.80784313725490198" blue="0.92156862745098034" alpha="0.89999997620000005" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-WM-d8o">
+                                        <rect key="frame" x="0.0" y="200" width="313" height="176"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ريهانا فاروق" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-sB-thd">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="29"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العربية السعودية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-4i-Bl7">
+                                                <rect key="frame" x="0.0" y="34" width="313" height="22"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                <color key="textColor" red="0.56862745100000001" green="0.80784313730000001" blue="0.92156862750000001" alpha="0.89999997620000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v6Z-n6-HQW">
+                                                <rect key="frame" x="20" y="110" width="273" height="42"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INu-Gn-sg2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="126.66666666666667" height="34.333333333333336"/>
+                                                        <color key="backgroundColor" name="clrActiveButton"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="تجاوز"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnSkipOnClick:" destination="4Wk-vi-9v8" eventType="touchUpInside" id="Z4f-Rr-8PI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-2I-IkZ">
+                                                        <rect key="frame" x="146.66666666666666" y="0.0" width="126.33333333333334" height="34.333333333333336"/>
+                                                        <color key="backgroundColor" name="clrActiveButton"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="موافق"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnAcceptOnClick:" destination="4Wk-vi-9v8" eventType="touchUpInside" id="RxU-Yg-rWV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="COn-g0-3bv"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="clrPopUp"/>
+                                        <constraints>
+                                            <constraint firstItem="JYx-sB-thd" firstAttribute="leading" secondItem="xtV-WM-d8o" secondAttribute="leading" id="2He-hK-rcR"/>
+                                            <constraint firstAttribute="trailing" secondItem="5f6-4i-Bl7" secondAttribute="trailing" id="Cs5-iO-iMD"/>
+                                            <constraint firstAttribute="bottom" secondItem="v6Z-n6-HQW" secondAttribute="bottom" constant="24" id="DZo-al-4Lf"/>
+                                            <constraint firstItem="5f6-4i-Bl7" firstAttribute="top" secondItem="JYx-sB-thd" secondAttribute="bottom" constant="5" id="IiX-9A-QFF"/>
+                                            <constraint firstAttribute="trailing" secondItem="JYx-sB-thd" secondAttribute="trailing" id="b3g-e3-jfA"/>
+                                            <constraint firstItem="v6Z-n6-HQW" firstAttribute="leading" secondItem="xtV-WM-d8o" secondAttribute="leading" constant="20" id="hfc-XG-3IE"/>
+                                            <constraint firstItem="5f6-4i-Bl7" firstAttribute="leading" secondItem="xtV-WM-d8o" secondAttribute="leading" id="niY-5b-hO9"/>
+                                            <constraint firstItem="JYx-sB-thd" firstAttribute="top" secondItem="xtV-WM-d8o" secondAttribute="top" id="r0I-OD-V8L"/>
+                                            <constraint firstAttribute="trailing" secondItem="v6Z-n6-HQW" secondAttribute="trailing" constant="20" id="yjd-R2-szY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="clrPopUp"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kA3-W5-a22" secondAttribute="bottom" constant="80" id="3fH-D9-WF5"/>
+                                    <constraint firstItem="xtV-WM-d8o" firstAttribute="leading" secondItem="KMv-D3-5cH" secondAttribute="leading" id="6y1-2m-9bd"/>
                                     <constraint firstAttribute="height" constant="376" id="8LT-bz-tIP"/>
                                     <constraint firstItem="kA3-W5-a22" firstAttribute="leading" secondItem="KMv-D3-5cH" secondAttribute="leading" constant="20" id="Fjn-YP-DPR"/>
                                     <constraint firstItem="vS9-UL-f84" firstAttribute="centerY" secondItem="pC3-r6-Uy4" secondAttribute="centerY" id="LrM-jg-9ru"/>
+                                    <constraint firstItem="xtV-WM-d8o" firstAttribute="top" secondItem="pC3-r6-Uy4" secondAttribute="bottom" constant="10" id="Nlf-c2-Rj0"/>
+                                    <constraint firstAttribute="bottom" secondItem="xtV-WM-d8o" secondAttribute="bottom" id="Nrw-9S-PZQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xtV-WM-d8o" secondAttribute="trailing" id="U1U-bl-u0D"/>
                                     <constraint firstAttribute="trailing" secondItem="kA3-W5-a22" secondAttribute="trailing" constant="20" id="W1Y-HV-Kou"/>
                                     <constraint firstItem="vS9-UL-f84" firstAttribute="centerX" secondItem="pC3-r6-Uy4" secondAttribute="centerX" id="WSZ-cY-4UI"/>
                                     <constraint firstItem="pC3-r6-Uy4" firstAttribute="top" secondItem="KMv-D3-5cH" secondAttribute="top" constant="24" id="aMB-0b-seI"/>
@@ -658,7 +729,10 @@
                     </view>
                     <connections>
                         <outlet property="imgProfilePhoto" destination="vS9-UL-f84" id="Kfg-FI-odS"/>
+                        <outlet property="lblPersonLocation" destination="5f6-4i-Bl7" id="vNj-b9-RNK"/>
+                        <outlet property="lblPersonName" destination="JYx-sB-thd" id="VhM-fK-tUU"/>
                         <outlet property="vwCircleLoader" destination="pC3-r6-Uy4" id="6cv-pU-2qt"/>
+                        <outlet property="vwResultFoundOption" destination="xtV-WM-d8o" id="Zmv-Ot-HVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdt-2i-zee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

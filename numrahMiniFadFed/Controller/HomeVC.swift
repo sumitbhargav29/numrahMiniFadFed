@@ -44,7 +44,6 @@ class HomeVC: UIViewController {
         iconEveryone.layer.borderWidth = 1.5
         iconFemale.layer.borderWidth = 1.5
         
-        
     }
     
     // Reset the selection colors
@@ -52,9 +51,7 @@ class HomeVC: UIViewController {
         iconMen.layer.borderColor = UIColor.clear.cgColor
         iconEveryone.layer.borderColor = UIColor.clear.cgColor
         iconFemale.layer.borderColor = UIColor.clear.cgColor
-        
     }
-    
     
     
 }
@@ -62,7 +59,6 @@ class HomeVC: UIViewController {
 
 //MARK: - IBActions
 extension HomeVC {
-    
     
     @IBAction func btnMaleSelectOnClick(_ sender: UIButton) {
         resetSelection()  // Reset the colors
@@ -79,7 +75,6 @@ extension HomeVC {
         iconFemale.layer.borderColor = UIColor.clrViewOuterGender.cgColor   // Set the selected color for women
     }
     
-    
     @IBAction func btnSearchMatchOnClick(_ sender: UIButton) {
         
         if let vc = MainInStoryboard.instantiateViewController(withIdentifier: idSearchVCPopUp) as? SearchVCPopUp {
@@ -87,8 +82,6 @@ extension HomeVC {
             //            vc.deleteStoreDelegate = self
             sceneDelegate?.appNavigation?.present(vc, animated: true)
         }
-        
     }
-    
     
 }
