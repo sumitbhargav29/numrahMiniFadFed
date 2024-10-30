@@ -29,7 +29,6 @@
 		8832BDFD2CCE22B300EA3F39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BDFA2CCE22B300EA3F39 /* NetworkManager.swift */; };
 		8832BE002CCE293200EA3F39 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BDFF2CCE293200EA3F39 /* SignupVC.swift */; };
 		884DEE0E2CD1175C006BEA51 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884DEE0D2CD1175C006BEA51 /* ChatVC.swift */; };
-		889ABC2E2CD15A7E006BEDBB /* GrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC2D2CD15A7E006BEDBB /* GrowingTextView.swift */; };
 		889ABC302CD15D1A006BEDBB /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */; };
 		889ABC342CD15F64006BEDBB /* ChatListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC322CD15F64006BEDBB /* ChatListTVC.swift */; };
 		889ABC352CD15F64006BEDBB /* ChatListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889ABC332CD15F64006BEDBB /* ChatListTVC.xib */; };
@@ -64,7 +63,6 @@
 		8832BDFA2CCE22B300EA3F39 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8832BDFF2CCE293200EA3F39 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		884DEE0D2CD1175C006BEA51 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
-		889ABC2D2CD15A7E006BEDBB /* GrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextView.swift; sourceTree = "<group>"; };
 		889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		889ABC322CD15F64006BEDBB /* ChatListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVC.swift; sourceTree = "<group>"; };
 		889ABC332CD15F64006BEDBB /* ChatListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTVC.xib; sourceTree = "<group>"; };
@@ -168,11 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				88DBDD462CD02463003F9F85 /* Tabbar */,
-				8832BDFF2CCE293200EA3F39 /* SignupVC.swift */,
-				8832BD7E2CCDFC7400EA3F39 /* HomeVC.swift */,
-				88DBDD492CD02B11003F9F85 /* SearchVCPopUp.swift */,
-				884DEE0D2CD1175C006BEA51 /* ChatVC.swift */,
+				88A61C902CD27CA1002F1BC8 /* SignUP */,
+				88A61C912CD27CAC002F1BC8 /* Dashboard screens */,
 				889ABC312CD15F42006BEDBB /* Conversation list */,
+				88A61C922CD27CC4002F1BC8 /* Chats */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 				88C3EF422CCF64BC00B36691 /* KeyNameConstants.swift */,
 				8832BDF62CCE1CB100EA3F39 /* NetworkReachability.swift */,
 				88DBDD472CD02AB1003F9F85 /* CircularProgressView.swift */,
-				889ABC2D2CD15A7E006BEDBB /* GrowingTextView.swift */,
 				8832BD982CCE01C800EA3F39 /* ColorManager.swift */,
 			);
 			path = SupportedFiles;
@@ -254,6 +250,31 @@
 				889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */,
 			);
 			path = "Conversation list";
+			sourceTree = "<group>";
+		};
+		88A61C902CD27CA1002F1BC8 /* SignUP */ = {
+			isa = PBXGroup;
+			children = (
+				8832BDFF2CCE293200EA3F39 /* SignupVC.swift */,
+			);
+			path = SignUP;
+			sourceTree = "<group>";
+		};
+		88A61C912CD27CAC002F1BC8 /* Dashboard screens */ = {
+			isa = PBXGroup;
+			children = (
+				8832BD7E2CCDFC7400EA3F39 /* HomeVC.swift */,
+				88DBDD492CD02B11003F9F85 /* SearchVCPopUp.swift */,
+			);
+			path = "Dashboard screens";
+			sourceTree = "<group>";
+		};
+		88A61C922CD27CC4002F1BC8 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				884DEE0D2CD1175C006BEA51 /* ChatVC.swift */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 		88DBDD462CD02463003F9F85 /* Tabbar */ = {
@@ -395,7 +416,6 @@
 				8832BD992CCE01C800EA3F39 /* ColorManager.swift in Sources */,
 				8832BE002CCE293200EA3F39 /* SignupVC.swift in Sources */,
 				88C3EF432CCF64BC00B36691 /* KeyNameConstants.swift in Sources */,
-				889ABC2E2CD15A7E006BEDBB /* GrowingTextView.swift in Sources */,
 				88DBDD4A2CD02B11003F9F85 /* SearchVCPopUp.swift in Sources */,
 				8832BDF82CCE1CB100EA3F39 /* NetworkReachability.swift in Sources */,
 				884DEE0E2CD1175C006BEA51 /* ChatVC.swift in Sources */,

@@ -11,11 +11,7 @@ import UIKit
 
 class HomePage: UITabBarController,UITabBarControllerDelegate {
     
-    
-    public let clr_DarkBlue = #colorLiteral(red: 0.3098039216, green: 0.3843137255, blue: 0.9333333333, alpha: 1)                 // 4F62EE
     public let clr_PowderBlue = #colorLiteral(red: 0.6235294118, green: 0.6352941176, blue: 0.7411764706, alpha: 1)                 // 4F62EE
-    //    temp delete this above
-    
     
     let centerBtn = UIButton.init(type: .custom)
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
@@ -34,9 +30,9 @@ class HomePage: UITabBarController,UITabBarControllerDelegate {
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -6)
         
         // Adjust icon position to be 10 points from the top
-            for item in self.tabBar.items ?? [] {
-                item.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0) // Moves icon 10 points up
-            }
+        for item in self.tabBar.items ?? [] {
+            item.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0) // Moves icon 10 points up
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -86,9 +82,7 @@ class HomePage: UITabBarController,UITabBarControllerDelegate {
         sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
         sceneDelegate?.window?.makeKeyAndVisible()
         vc.selectedIndex = 1
-        //        let vc = MainInStoryboard.instantiateViewController(withIdentifier: "OnBoardScreensVCTemp") as! OnBoardScreensVCTemp
-        //        sceneDelegate?.appNavigation?.pushViewController(vc, animated: true)
-    }
+     }
 }
 
 

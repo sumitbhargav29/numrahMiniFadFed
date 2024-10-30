@@ -690,6 +690,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-uX-GFT">
                                 <rect key="frame" x="20" y="756" width="353" height="42"/>
                                 <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="kWQ-5c-LsP">
+                                        <rect key="frame" x="5" y="2" width="303" height="38"/>
+                                        <color key="tintColor" name="clrLineBreak"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="crf-gy-grb"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2z-ak-nyH">
                                         <rect key="frame" x="313" y="6" width="30" height="30"/>
                                         <constraints>
@@ -699,34 +709,38 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="ic_send"/>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="kWQ-5c-LsP">
-                                        <rect key="frame" x="5" y="5" width="303" height="32"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="kWQ-5c-LsP" firstAttribute="leading" secondItem="JaV-uX-GFT" secondAttribute="leading" constant="5" id="0MB-zQ-YqF"/>
                                     <constraint firstItem="p2z-ak-nyH" firstAttribute="leading" secondItem="kWQ-5c-LsP" secondAttribute="trailing" constant="5" id="3qQ-yO-wef"/>
-                                    <constraint firstAttribute="bottom" secondItem="kWQ-5c-LsP" secondAttribute="bottom" constant="5" id="LUp-LS-pLd"/>
-                                    <constraint firstAttribute="height" constant="42" id="b1r-Z6-den"/>
+                                    <constraint firstAttribute="bottom" secondItem="kWQ-5c-LsP" secondAttribute="bottom" constant="2" id="LUp-LS-pLd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="b1r-Z6-den"/>
                                     <constraint firstItem="p2z-ak-nyH" firstAttribute="centerY" secondItem="JaV-uX-GFT" secondAttribute="centerY" id="u8W-Lr-6Np"/>
-                                    <constraint firstItem="kWQ-5c-LsP" firstAttribute="top" secondItem="JaV-uX-GFT" secondAttribute="top" constant="5" id="wRz-cI-zAs"/>
+                                    <constraint firstItem="kWQ-5c-LsP" firstAttribute="top" secondItem="JaV-uX-GFT" secondAttribute="top" constant="2" id="wRz-cI-zAs"/>
                                     <constraint firstAttribute="trailing" secondItem="p2z-ak-nyH" secondAttribute="trailing" constant="10" id="zHR-gX-RKi"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3q2-Ak-lQH">
+                                <rect key="frame" x="0.0" y="144" width="393" height="612"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wM7-BJ-KxR" id="knC-6S-v3O"/>
+                                    <outlet property="delegate" destination="wM7-BJ-KxR" id="xJo-qh-zux"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pms-Kf-8jD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3q2-Ak-lQH" firstAttribute="top" secondItem="aQV-MM-WXk" secondAttribute="bottom" id="35u-Zg-GVy"/>
+                            <constraint firstAttribute="trailing" secondItem="3q2-Ak-lQH" secondAttribute="trailing" id="3dg-wg-4B2"/>
                             <constraint firstItem="aQV-MM-WXk" firstAttribute="trailing" secondItem="Pms-Kf-8jD" secondAttribute="trailing" id="PGH-LT-jMf"/>
                             <constraint firstItem="Pms-Kf-8jD" firstAttribute="bottom" secondItem="JaV-uX-GFT" secondAttribute="bottom" constant="20" id="Uea-1Y-Qaq"/>
+                            <constraint firstItem="3q2-Ak-lQH" firstAttribute="leading" secondItem="Pms-Kf-8jD" secondAttribute="leading" id="XEP-Ib-Hog"/>
                             <constraint firstItem="aQV-MM-WXk" firstAttribute="top" secondItem="0og-i5-INM" secondAttribute="top" id="Xvj-4b-jGQ"/>
                             <constraint firstAttribute="trailing" secondItem="JaV-uX-GFT" secondAttribute="trailing" constant="20" id="ZRW-EP-ocl"/>
                             <constraint firstItem="JaV-uX-GFT" firstAttribute="leading" secondItem="Pms-Kf-8jD" secondAttribute="leading" constant="20" id="eiy-ko-oKX"/>
+                            <constraint firstItem="JaV-uX-GFT" firstAttribute="top" secondItem="3q2-Ak-lQH" secondAttribute="bottom" id="hyG-0p-yxl"/>
                             <constraint firstItem="aQV-MM-WXk" firstAttribute="leading" secondItem="Pms-Kf-8jD" secondAttribute="leading" id="woV-83-Hd2"/>
                         </constraints>
                     </view>
@@ -734,8 +748,12 @@
                         <outlet property="btnAddPeople" destination="wkT-Kt-Xxy" id="qDu-X4-tVO"/>
                         <outlet property="btnNotification" destination="eVb-MK-WOG" id="IbQ-yH-fv1"/>
                         <outlet property="btnReload" destination="uOK-KV-JxS" id="Gn6-zX-d0b"/>
+                        <outlet property="btnSend" destination="p2z-ak-nyH" id="ESJ-dT-ePp"/>
                         <outlet property="imgProfilePhoto" destination="x4Z-Oy-lPW" id="Bj4-c4-ZRm"/>
                         <outlet property="lblName" destination="kxi-cg-jzq" id="Kny-Ec-cvC"/>
+                        <outlet property="tblChats" destination="3q2-Ak-lQH" id="nnh-Xk-0sf"/>
+                        <outlet property="tvMessageArea" destination="kWQ-5c-LsP" id="vcl-wp-WtH"/>
+                        <outlet property="vwMsgBoxParent" destination="JaV-uX-GFT" id="aWS-yH-gJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsR-Lk-NRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

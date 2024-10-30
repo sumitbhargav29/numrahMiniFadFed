@@ -9,31 +9,20 @@ import UIKit
 
 class ChatListVC: UIViewController {
     
-    //MARK: - IBOutlets
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var tblChatList: UITableView!
     
-    
-    //MARK: - View Life Cycle
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblChatList.register(UINib(nibName: idChatListTVC, bundle: nil), forCellReuseIdentifier: idChatListTVC)
+        setupTableView()
     }
     
-    //    func pushViewControllerWithRightToLeftTransition(_ viewController: UIViewController, from navigationController: UINavigationController?) {
-    //        let transition = CATransition()
-    //        transition.duration = 0.3
-    //        transition.type = .push
-    //        transition.subtype = .fromRight  // Right-to-left transition
-    //        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-    //
-    //        navigationController?.view.layer.add(transition, forKey: kCATransition)
-    //        navigationController?.pushViewController(viewController, animated: false)
-    //    }
-    
-    
+    // MARK: - Setup Methods
+    private func setupTableView() {
+        tblChatList.register(UINib(nibName: idChatListTVC, bundle: nil), forCellReuseIdentifier: idChatListTVC)
+    }
 }
-
 
 // MARK: - TableView Delegate and DataSource methods
 extension ChatListVC: UITableViewDelegate, UITableViewDataSource {
@@ -43,25 +32,22 @@ extension ChatListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Cast the dequeued cell to your custom cell type
-        if let cell = tableView.dequeueReusableCell(withIdentifier: idChatListTVC, for: indexPath) as? ChatListTVC {
-            
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idChatListTVC, for: indexPath) as? ChatListTVC else {
+            return UITableViewCell()
         }
-        return UITableViewCell()
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = MainInStoryboard.instantiateViewController(withIdentifier: idChatVC) as? ChatVC {
-            let transition = CATransition()
-            transition.duration = 0.3
-            transition.type = .push
-            transition.subtype = .fromRight  // Right-to-left transition
-            transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            
-            sceneDelegate?.appNavigation?.view.layer.add(transition, forKey: kCATransition)
-            sceneDelegate?.appNavigation?.pushViewController(vc, animated: false)
-        }
+        navigateToChatVC()
     }
     
+    // MARK: - Navigation
+    private func navigateToChatVC() {
+        guard let vc = MainInStoryboard.instantiateViewController(withIdentifier: idChatVC) as? ChatVC else { return }
+        
+        applyTransition(to: sceneDelegate?.appNavigation, transitionSubtype: .fromLeft)
+        sceneDelegate?.appNavigation?.pushViewController(vc, animated: false)
+    }
 }

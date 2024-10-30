@@ -16,6 +16,17 @@ let date = Date()
 
 extension UIViewController {
     
+    func applyTransition(to navigationController: UINavigationController?, transitionSubtype: CATransitionSubtype) {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = .push
+        transition.subtype = transitionSubtype
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
+    }
+
+    
     //MARK: -  Get VC
     public func getStoryboard(storyboardName: String) -> UIStoryboard {
         return UIStoryboard(name: storyboardName, bundle: nil)
