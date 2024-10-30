@@ -20,7 +20,7 @@ extension UIViewController {
     public func getStoryboard(storyboardName: String) -> UIStoryboard {
         return UIStoryboard(name: storyboardName, bundle: nil)
     }
-
+    
     public func loadVC(strStoryboardId: String, strVCId: String) -> UIViewController {
         let vc = getStoryboard(storyboardName: strStoryboardId).instantiateViewController(withIdentifier: strVCId)
         return vc
@@ -90,6 +90,14 @@ extension UIView{
             self.isUserInteractionEnabled = true
         }
     }
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds,
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
 }
 
 extension UIViewController {
@@ -116,11 +124,22 @@ extension HTTPURLResponse {
 }
 
 extension UIButton {
+    
     func setUnderlinedTitle(_ title: String, for state: UIControl.State) {
         let attributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
         let attributedTitle = NSAttributedString(string: title, attributes: attributes)
         self.setAttributedTitle(attributedTitle, for: state)
+    }
+    
+    func setIconAboveTitle(spacing: CGFloat) {
+        var config = UIButton.Configuration.plain()
+        
+        config.imagePlacement = .top
+        config.imagePadding = spacing
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        self.configuration = config
     }
 }

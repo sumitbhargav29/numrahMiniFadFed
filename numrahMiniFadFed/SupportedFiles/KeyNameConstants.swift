@@ -39,15 +39,16 @@ public let MainInStoryboard = UIStoryboard(name: "Main", bundle: nil)
 public let idHomeVC = "HomeVC"
 public let idHomePage = "HomePage"
 public let idSignUpVC = "SignUpVC"
+public let idChatListVC = "ChatListVC"
+public let idChatVC = "ChatVC"
 
-
-
+ 
 //Custome PopUp
 public let idSearchVCPopUp = "SearchVCPopUp"
 
 
 // Table cell identifier
-public let idProfileTVC = "ProfileTVC"
+public let idChatListTVC = "ChatListTVC"
 
 
 //MARK: - USER DEFAULTS KEY
