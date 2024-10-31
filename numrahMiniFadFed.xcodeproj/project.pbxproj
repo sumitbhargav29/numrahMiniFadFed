@@ -29,6 +29,12 @@
 		8832BDFD2CCE22B300EA3F39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BDFA2CCE22B300EA3F39 /* NetworkManager.swift */; };
 		8832BE002CCE293200EA3F39 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BDFF2CCE293200EA3F39 /* SignupVC.swift */; };
 		884DEE0E2CD1175C006BEA51 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884DEE0D2CD1175C006BEA51 /* ChatVC.swift */; };
+		8855581D2CD3816F00400E47 /* TextMsgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855581B2CD3816F00400E47 /* TextMsgTVC.swift */; };
+		8855581E2CD3816F00400E47 /* TextMsgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8855581C2CD3816F00400E47 /* TextMsgTVC.xib */; };
+		885558222CD381C800400E47 /* RTextMsgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558202CD381C800400E47 /* RTextMsgTVC.swift */; };
+		885558232CD381C800400E47 /* RTextMsgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885558212CD381C800400E47 /* RTextMsgTVC.xib */; };
+		885558262CD3BA6400400E47 /* SocketConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558252CD3BA6400400E47 /* SocketConstants.swift */; };
+		885558282CD3BABF00400E47 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558272CD3BABF00400E47 /* SocketIOManager.swift */; };
 		889ABC302CD15D1A006BEDBB /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */; };
 		889ABC342CD15F64006BEDBB /* ChatListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC322CD15F64006BEDBB /* ChatListTVC.swift */; };
 		889ABC352CD15F64006BEDBB /* ChatListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889ABC332CD15F64006BEDBB /* ChatListTVC.xib */; };
@@ -63,6 +69,12 @@
 		8832BDFA2CCE22B300EA3F39 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8832BDFF2CCE293200EA3F39 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		884DEE0D2CD1175C006BEA51 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		8855581B2CD3816F00400E47 /* TextMsgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMsgTVC.swift; sourceTree = "<group>"; };
+		8855581C2CD3816F00400E47 /* TextMsgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextMsgTVC.xib; sourceTree = "<group>"; };
+		885558202CD381C800400E47 /* RTextMsgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTextMsgTVC.swift; sourceTree = "<group>"; };
+		885558212CD381C800400E47 /* RTextMsgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTextMsgTVC.xib; sourceTree = "<group>"; };
+		885558252CD3BA6400400E47 /* SocketConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConstants.swift; sourceTree = "<group>"; };
+		885558272CD3BABF00400E47 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		889ABC322CD15F64006BEDBB /* ChatListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVC.swift; sourceTree = "<group>"; };
 		889ABC332CD15F64006BEDBB /* ChatListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTVC.xib; sourceTree = "<group>"; };
@@ -201,6 +213,7 @@
 		8832BD952CCDFD1600EA3F39 /* SupportedFiles */ = {
 			isa = PBXGroup;
 			children = (
+				885558242CD3BA4400400E47 /* SocketManager */,
 				8832BDA22CCE030100EA3F39 /* Fonts */,
 				8832BDF52CCE1CB100EA3F39 /* AppExtension.swift */,
 				88C3EF422CCF64BC00B36691 /* KeyNameConstants.swift */,
@@ -244,6 +257,33 @@
 			path = TableCell;
 			sourceTree = "<group>";
 		};
+		8855581A2CD35F7000400E47 /* Sender */ = {
+			isa = PBXGroup;
+			children = (
+				8855581B2CD3816F00400E47 /* TextMsgTVC.swift */,
+				8855581C2CD3816F00400E47 /* TextMsgTVC.xib */,
+			);
+			path = Sender;
+			sourceTree = "<group>";
+		};
+		8855581F2CD3818500400E47 /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				885558202CD381C800400E47 /* RTextMsgTVC.swift */,
+				885558212CD381C800400E47 /* RTextMsgTVC.xib */,
+			);
+			path = Receiver;
+			sourceTree = "<group>";
+		};
+		885558242CD3BA4400400E47 /* SocketManager */ = {
+			isa = PBXGroup;
+			children = (
+				885558252CD3BA6400400E47 /* SocketConstants.swift */,
+				885558272CD3BABF00400E47 /* SocketIOManager.swift */,
+			);
+			path = SocketManager;
+			sourceTree = "<group>";
+		};
 		889ABC312CD15F42006BEDBB /* Conversation list */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				884DEE0D2CD1175C006BEA51 /* ChatVC.swift */,
+				8855581F2CD3818500400E47 /* Receiver */,
+				8855581A2CD35F7000400E47 /* Sender */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -348,6 +390,7 @@
 				8832BD842CCDFC7600EA3F39 /* Assets.xcassets in Resources */,
 				889ABC352CD15F64006BEDBB /* ChatListTVC.xib in Resources */,
 				8832BDDE2CCE033C00EA3F39 /* Arabic-Regular.ttf in Resources */,
+				885558232CD381C800400E47 /* RTextMsgTVC.xib in Resources */,
 				8832BD872CCDFC7600EA3F39 /* Base in Resources */,
 				8832BDE82CCE033C00EA3F39 /* Arabic-Bold.ttf in Resources */,
 				8832BDD52CCE033C00EA3F39 /* Arabic-Medium.ttf in Resources */,
@@ -355,6 +398,7 @@
 				8832BDEE2CCE033C00EA3F39 /* Arabic-Thin.ttf in Resources */,
 				8832BDD62CCE033C00EA3F39 /* Arabic-SemiBold.ttf in Resources */,
 				8832BDD82CCE033C00EA3F39 /* Arabic-Light.ttf in Resources */,
+				8855581E2CD3816F00400E47 /* TextMsgTVC.xib in Resources */,
 				8832BDD92CCE033C00EA3F39 /* Arabic-Black.ttf in Resources */,
 				8832BDAC2CCE031E00EA3F39 /* Arabic-VariableFont.ttf in Resources */,
 			);
@@ -412,10 +456,12 @@
 				889ABC302CD15D1A006BEDBB /* ChatListVC.swift in Sources */,
 				8832BDFD2CCE22B300EA3F39 /* NetworkManager.swift in Sources */,
 				88C3EF452CCF668D00B36691 /* HomePage.swift in Sources */,
+				885558262CD3BA6400400E47 /* SocketConstants.swift in Sources */,
 				8832BD7F2CCDFC7400EA3F39 /* HomeVC.swift in Sources */,
 				8832BD992CCE01C800EA3F39 /* ColorManager.swift in Sources */,
 				8832BE002CCE293200EA3F39 /* SignupVC.swift in Sources */,
 				88C3EF432CCF64BC00B36691 /* KeyNameConstants.swift in Sources */,
+				885558222CD381C800400E47 /* RTextMsgTVC.swift in Sources */,
 				88DBDD4A2CD02B11003F9F85 /* SearchVCPopUp.swift in Sources */,
 				8832BDF82CCE1CB100EA3F39 /* NetworkReachability.swift in Sources */,
 				884DEE0E2CD1175C006BEA51 /* ChatVC.swift in Sources */,
@@ -423,7 +469,9 @@
 				8832BD7B2CCDFC7400EA3F39 /* AppDelegate.swift in Sources */,
 				8832BDF72CCE1CB100EA3F39 /* AppExtension.swift in Sources */,
 				889ABC342CD15F64006BEDBB /* ChatListTVC.swift in Sources */,
+				885558282CD3BABF00400E47 /* SocketIOManager.swift in Sources */,
 				88DBDD482CD02AB1003F9F85 /* CircularProgressView.swift in Sources */,
+				8855581D2CD3816F00400E47 /* TextMsgTVC.swift in Sources */,
 				8832BD7D2CCDFC7400EA3F39 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

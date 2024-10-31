@@ -32,7 +32,9 @@ class ChatVC: UIViewController {
         tvMessageArea.delegate = self
         disableSwipeBackGesture()
         
-        tblChats.register(UINib(nibName: idChatListTVC, bundle: nil), forCellReuseIdentifier: idChatListTVC)
+        tblChats.register(UINib(nibName: idTextMsgTVC, bundle: nil), forCellReuseIdentifier: idTextMsgTVC)
+        tblChats.register(UINib(nibName: idRTextMsgTVC, bundle: nil), forCellReuseIdentifier: idRTextMsgTVC)
+        
     }
     
     // MARK: - Setup Methods
@@ -112,11 +114,18 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idChatListTVC, for: indexPath) as? ChatListTVC else {
-            return UITableViewCell()
-        }
         
-        return cell
+        if indexPath.row % 2 == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: idTextMsgTVC, for: indexPath) as? TextMsgTVC else {
+                return UITableViewCell()
+            }
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: idRTextMsgTVC, for: indexPath) as? RTextMsgTVC else {
+                return UITableViewCell()
+            }
+            return cell
+        }
     }
     
 }

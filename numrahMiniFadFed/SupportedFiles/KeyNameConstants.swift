@@ -49,6 +49,10 @@ public let idSearchVCPopUp = "SearchVCPopUp"
 
 // Table cell identifier
 public let idChatListTVC = "ChatListTVC"
+public let idTextMsgTVC = "TextMsgTVC"
+public let idRTextMsgTVC = "RTextMsgTVC"
+
+
 
 
 //MARK: - USER DEFAULTS KEY
