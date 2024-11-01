@@ -35,6 +35,8 @@
 		885558232CD381C800400E47 /* RTextMsgTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885558212CD381C800400E47 /* RTextMsgTVC.xib */; };
 		885558262CD3BA6400400E47 /* SocketConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558252CD3BA6400400E47 /* SocketConstants.swift */; };
 		885558282CD3BABF00400E47 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558272CD3BABF00400E47 /* SocketIOManager.swift */; };
+		8855582A2CD3CDE700400E47 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885558292CD3CDE700400E47 /* SignUpViewModel.swift */; };
+		8855582C2CD3CE4100400E47 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855582B2CD3CE4100400E47 /* UserDataModel.swift */; };
 		889ABC302CD15D1A006BEDBB /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */; };
 		889ABC342CD15F64006BEDBB /* ChatListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ABC322CD15F64006BEDBB /* ChatListTVC.swift */; };
 		889ABC352CD15F64006BEDBB /* ChatListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889ABC332CD15F64006BEDBB /* ChatListTVC.xib */; };
@@ -75,6 +77,8 @@
 		885558212CD381C800400E47 /* RTextMsgTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTextMsgTVC.xib; sourceTree = "<group>"; };
 		885558252CD3BA6400400E47 /* SocketConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConstants.swift; sourceTree = "<group>"; };
 		885558272CD3BABF00400E47 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		885558292CD3CDE700400E47 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		8855582B2CD3CE4100400E47 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		889ABC2F2CD15D1A006BEDBB /* ChatListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		889ABC322CD15F64006BEDBB /* ChatListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVC.swift; sourceTree = "<group>"; };
 		889ABC332CD15F64006BEDBB /* ChatListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTVC.xib; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		8832BD8E2CCDFC8C00EA3F39 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8855582B2CD3CE4100400E47 /* UserDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,7 +166,6 @@
 		8832BD8F2CCDFC9600EA3F39 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8832BD942CCDFCE400EA3F39 /* Xib */,
 				8832BD932CCDFCDD00EA3F39 /* SB */,
 			);
 			path = View;
@@ -170,6 +174,7 @@
 		8832BD902CCDFCA100EA3F39 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				885558292CD3CDE700400E47 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,13 +206,6 @@
 				8832BD802CCDFC7400EA3F39 /* Main.storyboard */,
 			);
 			path = SB;
-			sourceTree = "<group>";
-		};
-		8832BD942CCDFCE400EA3F39 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
 			sourceTree = "<group>";
 		};
 		8832BD952CCDFD1600EA3F39 /* SupportedFiles */ = {
@@ -463,9 +461,11 @@
 				88C3EF432CCF64BC00B36691 /* KeyNameConstants.swift in Sources */,
 				885558222CD381C800400E47 /* RTextMsgTVC.swift in Sources */,
 				88DBDD4A2CD02B11003F9F85 /* SearchVCPopUp.swift in Sources */,
+				8855582C2CD3CE4100400E47 /* UserDataModel.swift in Sources */,
 				8832BDF82CCE1CB100EA3F39 /* NetworkReachability.swift in Sources */,
 				884DEE0E2CD1175C006BEA51 /* ChatVC.swift in Sources */,
 				8832BDFC2CCE22B300EA3F39 /* AppURL.swift in Sources */,
+				8855582A2CD3CDE700400E47 /* SignUpViewModel.swift in Sources */,
 				8832BD7B2CCDFC7400EA3F39 /* AppDelegate.swift in Sources */,
 				8832BDF72CCE1CB100EA3F39 /* AppExtension.swift in Sources */,
 				889ABC342CD15F64006BEDBB /* ChatListTVC.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 struct Domain {
-    static var dev = "https://hub.dummyapis.com/employee?"
+    static var dev = "https://dev.wefaaq.net/api/@fadfedx/"
 }
 
 extension Domain {
@@ -20,7 +20,9 @@ extension Domain {
 }
 
 struct APIEndpoint {
-    static let Employee  = "noofRecords=10&idStarts=1001"
+    static let auth  = "auth"
+    static let login  = "login"
+
 }
 
 enum HTTPHeaderField: String {

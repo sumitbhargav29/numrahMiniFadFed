@@ -20,9 +20,6 @@ class HomePage: UITabBarController,UITabBarControllerDelegate {
         super.viewDidLoad()
         
         initialize()
-        //        self.tabBar.layer.cornerRadius = 21
-        //        self.tabBar.layer.masksToBounds = true
-        //        self.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         UITabBar.appearance().unselectedItemTintColor = clr_PowderBlue
         UITabBar.appearance().barTintColor = UIColor.white
@@ -65,7 +62,7 @@ class HomePage: UITabBarController,UITabBarControllerDelegate {
     //    MARK:- Initialization
     func initialize() {
         centerBtn.setTitle("رفض", for: .normal)
-        //        centerBtn.setImage(UIImage(named: "?"), for: .normal)
+        //        centerBtn.setImage(UIImage(named: ""), for: .normal)
         centerBtn.backgroundColor = UIColor.clrTabButton
         centerBtn.clipsToBounds = false
         centerBtn.contentMode = .scaleAspectFit
@@ -82,7 +79,7 @@ class HomePage: UITabBarController,UITabBarControllerDelegate {
         sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
         sceneDelegate?.window?.makeKeyAndVisible()
         vc.selectedIndex = 1
-     }
+    }
 }
 
 

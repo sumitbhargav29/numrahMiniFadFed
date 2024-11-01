@@ -18,6 +18,8 @@ class SignupVC: UIViewController {
     @IBOutlet weak var iconMen: UIImageView!
     @IBOutlet weak var iconFemale: UIImageView!
     
+    private var viewModel = SignUpViewModel()
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,6 @@ class SignupVC: UIViewController {
         
         // Initially, no selection, so reset both views
         resetSelection()
-        
     }
     
     //MARK: - Custom Functions
@@ -61,13 +62,28 @@ extension SignupVC {
     
     @IBAction func btnContinueOnClick(_ sender: UIButton) {
         
-        let vc = loadVC(strStoryboardId: SB_MAIN, strVCId: idHomePage) as! HomePage
-        sceneDelegate?.appNavigation = UINavigationController(rootViewController: vc)
-        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.delegate = nil
-        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.isEnabled = true
-        sceneDelegate?.appNavigation?.isNavigationBarHidden = true
-        sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
-        sceneDelegate?.window?.makeKeyAndVisible()
+        //        let vc = loadVC(strStoryboardId: SB_MAIN, strVCId: idHomePage) as! HomePage
+        //        sceneDelegate?.appNavigation = UINavigationController(rootViewController: vc)
+        //        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.delegate = nil
+        //        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.isEnabled = true
+        //        sceneDelegate?.appNavigation?.isNavigationBarHidden = true
+        //        sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
+        //        sceneDelegate?.window?.makeKeyAndVisible()
+        
+         guard let username = tfName.text, !username.isEmpty else {
+            showAlert(AppName, "Please enter username")
+            return
+        }
+        
+        // Call the signUp method on the ViewModel
+        viewModel.signUp(username: username, password: "123456") { [weak self] success, message in
+            guard let self = self else { return }
+            
+             if success {
+                self.showAlert(AppName, "Sign-up successful!")
+            } else {
+                self.showAlert(AppName, "Error: \(message ?? "Unknown error")")
+            }
+        }
     }
-    
 }

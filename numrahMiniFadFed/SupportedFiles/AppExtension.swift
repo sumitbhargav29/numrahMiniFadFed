@@ -14,6 +14,16 @@ let dateFormatter = DateFormatter()
 let date = Date()
 
 
+public func createSession() {
+    let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? "UnknownDeviceID"
+    let sessionId = UUID().uuidString
+    
+    // Save the IDs in UserDefaults
+    UserDefaults.standard.set(deviceID, forKey: "DeviceID")
+    UserDefaults.standard.set(sessionId, forKey: "SessionID")
+    
+}
+
 extension UIViewController {
     
     func applyTransition(to navigationController: UINavigationController?, transitionSubtype: CATransitionSubtype) {
