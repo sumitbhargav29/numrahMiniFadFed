@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2558575E804CDD3B52DFD5A3 /* Pods_numrahMiniFadFed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78623A1B5D50BC471E99DA5 /* Pods_numrahMiniFadFed.framework */; };
+		8819019F2CD604AA00435C97 /* HMACUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819019E2CD604AA00435C97 /* HMACUtility.swift */; };
 		8832BD7B2CCDFC7400EA3F39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BD7A2CCDFC7400EA3F39 /* AppDelegate.swift */; };
 		8832BD7D2CCDFC7400EA3F39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BD7C2CCDFC7400EA3F39 /* SceneDelegate.swift */; };
 		8832BD7F2CCDFC7400EA3F39 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8832BD7E2CCDFC7400EA3F39 /* HomeVC.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		54D58CA026919CC035C3AAE9 /* Pods-numrahMiniFadFed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numrahMiniFadFed.release.xcconfig"; path = "Target Support Files/Pods-numrahMiniFadFed/Pods-numrahMiniFadFed.release.xcconfig"; sourceTree = "<group>"; };
+		8819019E2CD604AA00435C97 /* HMACUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMACUtility.swift; sourceTree = "<group>"; };
 		8832BD772CCDFC7400EA3F39 /* numrahMiniFadFed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = numrahMiniFadFed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8832BD7A2CCDFC7400EA3F39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8832BD7C2CCDFC7400EA3F39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				8832BD912CCDFCBB00EA3F39 /* Controller */,
 				8832BDFB2CCE22B300EA3F39 /* RequestManager */,
 				8832BDFE2CCE22D600EA3F39 /* TableCell */,
+				885558242CD3BA4400400E47 /* SocketManager */,
 				8832BD952CCDFD1600EA3F39 /* SupportedFiles */,
 				8832BD832CCDFC7600EA3F39 /* Assets.xcassets */,
 				8832BD852CCDFC7600EA3F39 /* LaunchScreen.storyboard */,
@@ -211,10 +214,10 @@
 		8832BD952CCDFD1600EA3F39 /* SupportedFiles */ = {
 			isa = PBXGroup;
 			children = (
-				885558242CD3BA4400400E47 /* SocketManager */,
 				8832BDA22CCE030100EA3F39 /* Fonts */,
 				8832BDF52CCE1CB100EA3F39 /* AppExtension.swift */,
 				88C3EF422CCF64BC00B36691 /* KeyNameConstants.swift */,
+				8819019E2CD604AA00435C97 /* HMACUtility.swift */,
 				8832BDF62CCE1CB100EA3F39 /* NetworkReachability.swift */,
 				88DBDD472CD02AB1003F9F85 /* CircularProgressView.swift */,
 				8832BD982CCE01C800EA3F39 /* ColorManager.swift */,
@@ -460,6 +463,7 @@
 				8832BE002CCE293200EA3F39 /* SignupVC.swift in Sources */,
 				88C3EF432CCF64BC00B36691 /* KeyNameConstants.swift in Sources */,
 				885558222CD381C800400E47 /* RTextMsgTVC.swift in Sources */,
+				8819019F2CD604AA00435C97 /* HMACUtility.swift in Sources */,
 				88DBDD4A2CD02B11003F9F85 /* SearchVCPopUp.swift in Sources */,
 				8855582C2CD3CE4100400E47 /* UserDataModel.swift in Sources */,
 				8832BDF82CCE1CB100EA3F39 /* NetworkReachability.swift in Sources */,

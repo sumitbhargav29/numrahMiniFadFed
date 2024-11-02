@@ -16,7 +16,7 @@ struct SignUpRequest: Encodable {
     let password: String
 }
 
-struct SignUpResponse: Decodable {
-    let success: Bool
-    let message: String?
- }
+struct SignUpResponseModel: Decodable {
+    let udid: String
+    let token: String
+}

@@ -4,13 +4,12 @@
 //
 //  Created by SamMac on 31/10/24.
 //
- 
+
 import Foundation
-import CryptoKit
- 
+
 class SignUpViewModel: ObservableObject {
     
-     private var savedDeviceID: String? {
+    private var savedDeviceID: String? {
         return UserDefaults.standard.string(forKey: "DeviceID")
     }
     
@@ -20,28 +19,27 @@ class SignUpViewModel: ObservableObject {
     
     private let baseURL = "https://dev.wefaaq.net/api/@fadfedx/auth"
     
-    // Token generation method
-    func generateToken(sessionID: String, devid: String) -> String {
-        let key = SymmetricKey(data: Data(devid.utf8))
-        let hmac = HMAC<Insecure.MD5>.authenticationCode(for: Data(sessionID.utf8), using: key)
-        // Convert the HMAC to a hexadecimal string
-        let token = hmac.map { String(format: "%02hhx", $0) }.joined()
-        // Print the generated token
-        print("kakarot Generated Token: \(token)")
-        return token
-    }
-    
-    
     func signUp(username: String, password: String, completion: @escaping (Bool, String?) -> Void) {
-        // Use saved values from UserDefaults for the device ID and session ID
+        
+        guard NetworkReachability.shared.isConnectedToInternet() else {
+            completion(false, "No internet connection.")
+            return
+        }
+        
         guard let devid = savedDeviceID,
               let sessionID = savedSessionID else {
             completion(false, "Device ID or Session ID is missing.")
             return
         }
         
+        // Generate the MD5 token using HMACUtility
+        guard let token = HMACUtility.generateMD5Token(sessionUUID: sessionID, deviceUDID: devid) else {
+            completion(false, "Failed to generate token.")
+            return
+        }
+        
         // Construct the URL for the sign-up request
-        guard let url = URL(string: "\(baseURL)?devid=\(devid)&udid=\(sessionID)&token=\(generateToken(sessionID: sessionID, devid: devid))") else {
+        guard let url = URL(string: "\(baseURL)?devid=\(devid)&udid=\(sessionID)&token=\(token)") else {
             completion(false, "Invalid URL")
             return
         }
@@ -51,12 +49,16 @@ class SignUpViewModel: ObservableObject {
         request.setValue(sessionID, forHTTPHeaderField: "X-Session-ID")
         
         // Set up basic auth header
-        let authValue = "\(devid):\(generateToken(sessionID: sessionID, devid: devid))"
+        guard let authToken = HMACUtility.generateMD5Token(sessionUUID: sessionID, deviceUDID: devid) else {
+            completion(false, "Failed to generate auth token.")
+            return
+        }
+        
+        let authValue = "\(devid):\(authToken)"
         if let authData = authValue.data(using: .utf8) {
             let base64Auth = authData.base64EncodedString()
             request.setValue("Basic \(base64Auth)", forHTTPHeaderField: "Authorization")
-            print("kakarot base64Auth = ",base64Auth)
-            
+            print("Base64Auth =", base64Auth)
         }
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -69,10 +71,10 @@ class SignUpViewModel: ObservableObject {
             return
         }
         
+        // Execute the network request
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    print("Network error: \(error.localizedDescription)")
                     completion(false, "Network error: \(error.localizedDescription)")
                 }
                 return
@@ -87,9 +89,15 @@ class SignUpViewModel: ObservableObject {
             
             if httpResponse.statusCode == 200 {
                 do {
-                    let signUpResponse = try JSONDecoder().decode(SignUpResponse.self, from: data)
+                    print("Raw data:", String(data: data, encoding: .utf8) ?? "Unable to decode data to String")
+                    let signUpResponse = try JSONDecoder().decode(SignUpResponseModel.self, from: data)
+                    
+                    // Save `udid` and `token` in UserDefaults
+                    UserDefaults.standard.set(signUpResponse.udid, forKey: "userUDID")
+                    UserDefaults.standard.set(signUpResponse.token, forKey: "userToken")
+                    
                     DispatchQueue.main.async {
-                        completion(signUpResponse.success, signUpResponse.message)
+                        completion(true, "Token received successfully")
                     }
                 } catch {
                     DispatchQueue.main.async {
@@ -98,7 +106,6 @@ class SignUpViewModel: ObservableObject {
                 }
             } else {
                 DispatchQueue.main.async {
-                    print("Error: \(httpResponse.statusCode)")
                     completion(false, "Error: \(httpResponse.statusCode)")
                 }
             }
@@ -109,25 +116,3 @@ class SignUpViewModel: ObservableObject {
 
 
 
-
-
-//struct UserViewModel {
-
-//    func getUserData(comp: @escaping (_ isInternet: Bool, _ isError: Bool, _ data: UserDataModel) -> Void) {
-//        if NetworkReachability.shared.isConnectedToInternet() {
-//            NetworManger().UserData { model, isError in
-//                if isError {
-//                    comp(true, true, nil)
-//                } else {
-//                    if let model = model {
-//                        comp(true, false, model)
-//                    } else {
-//                        comp(true, true, nil)
-//                    }
-//                }
-//            }
-//        } else {
-//            comp(false, false, nil)
-//        }
-//    }
-//}

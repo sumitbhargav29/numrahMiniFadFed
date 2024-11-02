@@ -15,21 +15,26 @@ class SignupVC: UIViewController {
     @IBOutlet weak var btnMale: UIButton!
     @IBOutlet weak var btnFemale: UIButton!
     @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnContinueTermsHeading: UIButton!
+    
     @IBOutlet weak var iconMen: UIImageView!
     @IBOutlet weak var iconFemale: UIImageView!
     
-    private var viewModel = SignUpViewModel()
+    private var viewModelSignUP = SignUpViewModel()
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnContinue.setUnderlinedTitle("استمرارك يعني موافقتك على الشروط والأحكام", for: .normal)
+        btnContinueTermsHeading.setUnderlinedTitle("استمرارك يعني موافقتك على الشروط والأحكام", for: .normal)
         
         // Set default rounded corners
         setupViewRounding()
         
         // Initially, no selection, so reset both views
         resetSelection()
+        
+        tfName.delegate = self
+        btnContinue.isEnabled = false // Disable button initially if you want
     }
     
     //MARK: - Custom Functions
@@ -61,29 +66,55 @@ extension SignupVC {
     }
     
     @IBAction func btnContinueOnClick(_ sender: UIButton) {
-        
-        //        let vc = loadVC(strStoryboardId: SB_MAIN, strVCId: idHomePage) as! HomePage
-        //        sceneDelegate?.appNavigation = UINavigationController(rootViewController: vc)
-        //        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.delegate = nil
-        //        sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.isEnabled = true
-        //        sceneDelegate?.appNavigation?.isNavigationBarHidden = true
-        //        sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
-        //        sceneDelegate?.window?.makeKeyAndVisible()
-        
-         guard let username = tfName.text, !username.isEmpty else {
-            showAlert(AppName, "Please enter username")
+        guard let username = self.tfName.text, !username.isEmpty else {
+            self.showAlert(AppName, "Please enter username")
             return
         }
         
-        // Call the signUp method on the ViewModel
-        viewModel.signUp(username: username, password: "123456") { [weak self] success, message in
+        self.viewModelSignUP.signUp(username: username, password: "123456") { [weak self] success, message in
             guard let self = self else { return }
             
-             if success {
+            if success {
                 self.showAlert(AppName, "Sign-up successful!")
+                
+                // Add a 2-second delay before navigating to the HomePage
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    
+                    guard let vc = self.loadVC(strStoryboardId: SB_MAIN, strVCId: idHomePage) as? HomePage else {
+                        self.showAlert(AppName, "Failed to load HomePage")
+                        return
+                    }
+                    
+                    sceneDelegate?.appNavigation = UINavigationController(rootViewController: vc)
+                    sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.delegate = nil
+                    sceneDelegate?.appNavigation?.interactivePopGestureRecognizer?.isEnabled = true
+                    sceneDelegate?.appNavigation?.isNavigationBarHidden = true
+                    sceneDelegate?.window?.rootViewController = sceneDelegate?.appNavigation
+                    sceneDelegate?.window?.makeKeyAndVisible()
+                }
+                
             } else {
                 self.showAlert(AppName, "Error: \(message ?? "Unknown error")")
             }
         }
+    }
+    
+}
+
+//MARK: - UITextFieldDelegate method
+extension SignupVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        if updatedText.isEmpty {
+            btnContinue.backgroundColor = UIColor.clrSubLabel // Change to disabled color
+            btnContinue.isEnabled = false
+        } else {
+            btnContinue.backgroundColor = UIColor.clrActiveButton // Change to active color
+            btnContinue.isEnabled = true
+        }
+        return true
     }
 }

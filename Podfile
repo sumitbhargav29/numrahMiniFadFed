@@ -13,5 +13,6 @@ target 'numrahMiniFadFed' do
   pod 'SDWebImage'
   pod 'SwiftMessages'
   pod 'SwiftyJSON'
-  
+  pod 'Starscream', '~> 4.0.0'
+
 end

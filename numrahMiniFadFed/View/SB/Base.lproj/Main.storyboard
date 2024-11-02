@@ -236,7 +236,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="x3r-FN-MSk"/>
                     <connections>
-                        <outlet property="btnContinue" destination="4SN-1C-8Bh" id="EVQ-Nb-2Mn"/>
+                        <outlet property="btnContinue" destination="teQ-1Y-TVl" id="lGM-Ww-OVV"/>
+                        <outlet property="btnContinueTermsHeading" destination="4SN-1C-8Bh" id="5lk-qo-APS"/>
                         <outlet property="btnFemale" destination="0Cs-Ns-Lus" id="Vyi-tb-LG9"/>
                         <outlet property="btnMale" destination="yNr-bG-Qvz" id="t6M-Fa-RlS"/>
                         <outlet property="iconFemale" destination="AoW-g4-mXJ" id="wmc-nn-kMs"/>
