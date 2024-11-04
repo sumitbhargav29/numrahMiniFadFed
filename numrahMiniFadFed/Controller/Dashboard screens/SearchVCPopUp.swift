@@ -17,10 +17,31 @@ class SearchVCPopUp: UIViewController {
     @IBOutlet weak var lblPersonName: UILabel!
     @IBOutlet weak var lblPersonLocation: UILabel!
     
+    
+    private var savedDeviceID: String? {
+        return UserDefaults.standard.string(forKey: "DeviceID")
+    }
+    
+    private var savedSessionID: String? {
+        return UserDefaults.standard.string(forKey: "SessionID")
+    }
+    
+    private var saveduserToken: String? {
+        return UserDefaults.standard.string(forKey: "userToken")
+    }
+    
+    
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProfilePhoto()
+        
+        
+        // emp calling socket connect meethod
+        let socketManager = SocketIOManager.shared
+        socketManager.connect()
+ 
     }
     
     override func viewWillAppear(_ animated: Bool) {

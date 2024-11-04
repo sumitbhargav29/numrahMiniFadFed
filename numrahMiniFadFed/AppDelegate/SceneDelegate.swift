@@ -17,9 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window?.overrideUserInterfaceStyle = .light // or .dark / .light
+        
+//        window = UIWindow(windowScene: windowScene)
+// 
+//        let isLoggedIn = UserDefaultManager.getBooleanFromUserDefaults(key: UD_IsLoggedIn)
+////        print("Kakarot login flag = ",isLoggedIn)
+//        let storyboardId = isLoggedIn ? SB_HOME : SB_LOGIN
+//        let viewControllerId = isLoggedIn ? Constants.idHomePage : Constants.idLoginInitialVC
+//        
+//        let vc = loadVC(strStoryboardId: storyboardId, strVCId: viewControllerId)
+//        appNavigation = UINavigationController(rootViewController: vc)
+//        appNavigation?.isNavigationBarHidden = false
+//        appNavigation?.interactivePopGestureRecognizer?.delegate = nil
+//        appNavigation?.interactivePopGestureRecognizer?.isEnabled = true
+//        
+//        window?.rootViewController = appNavigation
+//        window?.makeKeyAndVisible()
         
     }
     

@@ -35,6 +35,8 @@ class SignupVC: UIViewController {
         
         tfName.delegate = self
         btnContinue.isEnabled = false // Disable button initially if you want
+        
+        createSession()
     }
     
     //MARK: - Custom Functions

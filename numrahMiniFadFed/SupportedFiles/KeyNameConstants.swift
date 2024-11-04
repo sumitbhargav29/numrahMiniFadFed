@@ -32,6 +32,12 @@ public let SB_MAIN :String = "Main"
 public let MainInStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
 
+//MARK: - Socket.io constant
+//var SOCKET_DOMAIN = URL.init(string:"wss://dev.wefaaq.net/")!
+var SOCKET_DOMAIN = URL.init(string:"wss://dev.wefaaq.net/@fadfedx")!
+
+
+
 //MARK: - VIEW CONTROLLER ID
 
 
